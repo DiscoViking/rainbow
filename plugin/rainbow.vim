@@ -9,8 +9,8 @@
 "	 	let g:rainbow_active = 1
 "	third, restart your vim and enjoy coding.
 "Advanced Configuration:
-"	an advanced configuration allows you to define what parentheses to use 
-"	for each type of file . you can also determine the colors of your 
+"	an advanced configuration allows you to define what parentheses to use
+"	for each type of file . you can also determine the colors of your
 "	parentheses by this way (read file vim73/rgb.txt for all named colors).
 "	READ THE SOURCE FILE FROM LINE 25 TO LINE 50 FOR EXAMPLE.
 "User Command:
@@ -23,14 +23,15 @@ endif
 let s:loaded = 1
 
 let s:rainbow_conf = {
-\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\       'guifgs': ['red', 'green', 'blue', 'yellow'],
+\       'ctermfgs': ['red', 'green', 'blue', 'yellow'],
 \	'operators': '_,_',
 \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \	'separately': {
 \		'*': {},
 \		'lisp': {
-\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\                       'guifgs': ['red', 'green', 'blue', 'yellow'],
+\                       'ctermfgs': ['red', 'green', 'blue', 'yellow'],
 \		},
 \		'tex': {
 \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
@@ -51,6 +52,13 @@ let s:rainbow_conf = {
 \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold', 'start=/(/ end=/)/ containedin=@htmlPreproc contains=@phpClTop', 'start=/\[/ end=/\]/ containedin=@htmlPreproc contains=@phpClTop', 'start=/{/ end=/}/ containedin=@htmlPreproc contains=@phpClTop'],
 \		},
 \		'css': 0,
+\               'sh': {
+\                       'parentheses': [['\(^\|\s\)if\($\|\s\)','_\(^\|\s\)\(then\|else\|elif\)\($\|\s\)_','\(^\|\s\)fi\($\|\s\)'],
+\                                       ['\(^\|\s\)while\($\|\s\)','_\(^\|\s\)\(do\)\($\|\s\)_','\(^\|\s\)done\($\|\s\)'],
+\                                       ['\(^\|\s\)for\($\|\s\)','_\(^\|\s\)\(do\|in\)\($\|\s\)_','\(^\|\s\)done\($\|\s\)'],
+\                                       ['\(^\|\s\)\S*()\s*{\?\($\|\s\)','_^{_','}'],
+\                                       ['\(^\|\s\)case\($\|\s\)','_\(^\|\s\)\(\S*)\|in\|;;\)\($\|\s\)_','\(^\|\s\)esac\($\|\s\)']],
+\               },
 \	}
 \}
 
